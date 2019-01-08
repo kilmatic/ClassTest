@@ -60,12 +60,72 @@ namespace ClassTest
             double area = rect.GetArea();
             Console.WriteLine("Area of Rectangle: {0}", area);
             */
+
         }
         /*
         static void r_Changed(object sender, EventArgs e)
         {
             Rectangle r = (Rectangle)sender;
             Console.WriteLine("Value Changed: Length = {0}", r.Length);
+        }
+        */
+        /*
+        static int[] BubbleSort(int[] numbers)
+        {
+            bool swapped;
+            do
+            {
+                swapped = false;
+                for (int i = 0; i < numbers.Length - 1; i++)
+                {
+                    if (numbers[i] > numbers[i + 1])
+                    {
+                        int temp = numbers[i + 1];
+                        numbers[i + 1] = numbers[i];
+                        numbers[i] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped == true);
+            return numbers;
+        }
+        */
+        /*
+        static int Partition(int[] numbers, int left, int right, int pivotIndex)
+        {
+            int pivotValue = numbers[pivotIndex];
+            int temp = numbers[right];
+            numbers[right] = numbers[pivotIndex];
+            numbers[pivotIndex] = temp;
+            int newPivot = left;
+
+            for (int i = left; i < right; i++)
+            {
+                if (numbers[i] <= pivotValue )
+                {
+                    temp = numbers[newPivot];
+                    numbers[newPivot] = numbers[i];
+                    numbers[i] = temp;
+                    newPivot++;
+                }
+            }
+
+            temp = numbers[right];
+            numbers[right] = numbers[newPivot];
+            numbers[newPivot] = temp;
+
+            return newPivot;
+        }
+        static int[] QuickSort(int[] numbers, int left, int right)
+        {
+            if (right > left)
+            {
+                int pivotIndex = left + (right - left) / 2;
+                pivotIndex = Partition(numbers, left, right, pivotIndex);
+                QuickSort(numbers, left, pivotIndex - 1);
+                QuickSort(numbers, pivotIndex + 1, right);
+            }
+            return numbers;
         }
         */
     }
