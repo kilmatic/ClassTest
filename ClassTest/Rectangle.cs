@@ -10,8 +10,28 @@ namespace ClassTest
     {
         public double X, Y;
     }
-    class Rectangle
+    abstract class Polygon
+    {
+        public double Length { get; protected set; }
+        public double Width { get; protected set; }
+        abstract public double GetArea();
+    }
+    class Rectangle : Polygon
     {   
+        public Rectangle(double length, double width)
+        {
+            Length = length;
+            Width = width;
+        }
+        public override double GetArea()
+        {
+            return Width * Length;
+        }
+        public override string ToString()
+        {
+            return String.Format("Width = {0}, Length = {1}", Width, Length);
+        }
+        /*
         public static string ShapeName
         {
             get { return "Rectangle"; }
@@ -23,7 +43,7 @@ namespace ClassTest
             return this.Length * this.Width;
         }
         
-        /*
+        
         public event EventHandler Changed;
         private double length;
         //private double width;

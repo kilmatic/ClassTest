@@ -10,6 +10,10 @@ namespace ClassTest
     {
         static void Main(string[] args)
         {
+            Rectangle rect = new Rectangle(10, 20);
+            Console.WriteLine("Width = {0}, Length = {1}, Area = {2}", rect.Width, rect.Length, rect.GetArea());
+            
+            /*
             Point p1 = new Point();
             p1.X = 10;
             p1.Y = 20;
@@ -21,7 +25,7 @@ namespace ClassTest
             rect2.Length = 100.0;
             Console.WriteLine("rect1.Length = {0}", rect1.Length);
             
-            /*
+            
             Rectangle rect = new Rectangle { Length = 10.0, Width = 20.0 };
             Console.WriteLine("Shape Name : {0}, Area: {1}", 
                 Rectangle.ShapeName, 
