@@ -6,18 +6,38 @@ using System.Threading.Tasks;
 
 namespace ClassTest
 {
+    /*
     struct Point
     {
         public double X, Y;
     }
-    abstract class Polygon
+    */
+    /*abstract*/ class Polygon
     {
+        /*
         public double Length { get; protected set; }
         public double Width { get; protected set; }
         abstract public double GetArea();
+        */
+        public virtual void Draw()
+        {
+            Console.WriteLine("Drawing: Polygon");
+        }
+    }
+    class Triangle: Polygon
+    {
+        public new void Draw()
+        {
+            Console.WriteLine("Drawing: Trianlge");
+        }
     }
     class Rectangle : Polygon
-    {   
+    {
+        public override void Draw()
+        {
+            Console.WriteLine("Drawing: Rectangle");
+        }
+        /*
         public Rectangle(double length, double width)
         {
             Length = length;
@@ -31,7 +51,7 @@ namespace ClassTest
         {
             return String.Format("Width = {0}, Length = {1}", Width, Length);
         }
-        /*
+        
         public static string ShapeName
         {
             get { return "Rectangle"; }

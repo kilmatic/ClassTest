@@ -10,10 +10,26 @@ namespace ClassTest
     {
         static void Main(string[] args)
         {
+            Triangle t = new Triangle();
+            t.Draw();
+            Polygon p = t;
+            p.Draw();
+
+            /*
+            List<Polygon> polygons = new List<Polygon>();
+            polygons.Add(new Polygon());
+            polygons.Add(new Rectangle());
+            polygons.Add(new Triangle());
+            foreach(Polygon p in polygons)
+            {
+                p.Draw();
+            }
+
+            
             Rectangle rect = new Rectangle(10, 20);
             Console.WriteLine("Width = {0}, Length = {1}, Area = {2}", rect.Width, rect.Length, rect.GetArea());
             
-            /*
+            
             Point p1 = new Point();
             p1.X = 10;
             p1.Y = 20;
