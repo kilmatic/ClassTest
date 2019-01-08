@@ -31,13 +31,35 @@ namespace ClassTest
             Console.WriteLine("Drawing: Trianlge");
         }
     }
-    class Rectangle : Polygon
+    class Rectangle : Polygon, IComparable
     {
+        public double Length { get; set; }
+        public double Width { get; set; }
+        public double GetArea()
+        {
+            return Length * Width;
+        }
+        public int CompareTo(object obj)
+        {
+            if ((obj == null))
+                return 1;
+            if (!(obj is Rectangle))
+                throw new ArgumentException();
+
+            Rectangle target = (Rectangle)obj;
+            double diff = this.GetArea() - target.GetArea();
+
+            if (diff == 0)
+                return 0;
+            else if (diff > 0)
+                return 1;
+            else return -1;
+        }
+        /*
         public override void Draw()
         {
             Console.WriteLine("Drawing: Rectangle");
-        }
-        /*
+        }        
         public Rectangle(double length, double width)
         {
             Length = length;
@@ -56,8 +78,9 @@ namespace ClassTest
         {
             get { return "Rectangle"; }
         }
-        public double Length { get; set; }
-        public double Width { get; set; }
+        */
+
+        /*
         public double GetArea()
         {
             return this.Length * this.Width;
@@ -102,9 +125,6 @@ namespace ClassTest
             length = l;
             width = w;
         }
-        public double GetArea()
-        {
-            return length * width;
-        }*/
+        */
     }
 }

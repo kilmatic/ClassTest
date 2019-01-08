@@ -10,12 +10,17 @@ namespace ClassTest
     {
         static void Main(string[] args)
         {
+            Rectangle rect1 = new Rectangle { Length = 10, Width = 20 };
+            Rectangle rect2 = new Rectangle { Length = 10, Width = 20 };
+            Console.WriteLine(rect1.CompareTo(rect2));
+
+            /*
             Triangle t = new Triangle();
             t.Draw();
             Polygon p = t;
             p.Draw();
 
-            /*
+            
             List<Polygon> polygons = new List<Polygon>();
             polygons.Add(new Polygon());
             polygons.Add(new Rectangle());
